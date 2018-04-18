@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>标注页</title>
+    <link rel="stylesheet" href="./css/image.css" type="text/css"/>
+
+    <script type="text/javascript" src="src/jquery/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="src/data/data-ns.js"></script>
+    <script type="text/javascript" src="src/js/CanvasEvent.js"></script>
+    <script type="text/javascript" src="src/js/CoverLeaveHandler.js"></script>
+    <script type="text/javascript" src="src/js/Image.js"></script>
+    <script type="text/javascript" src="src/js/ScrollBar.js"></script>
+    <script type="text/javascript" src="src/js/Shape.js"></script>
+    <script type="text/javascript" src="src/js/layout.js"></script>
+    <script type="text/javascript" src="src/js/ReferenceLine.js"></script>
+    <script type="text/javascript" src="src/js/ShapeUtil.js"></script>
+    <script type="text/javascript" src="src/js/UUID.js"></script>
+    <script type="text/javascript" src="src/js/DataExport.js"></script>
+    <script type="text/javascript" src="src/js/DataImport.js"></script>
+    <script type="text/javascript" src="src/js/TypeSelect.js"></script>
+    <script type="text/javascript" src="src/js/Toolbar.js"></script>
+    <script type="text/javascript" src="src/js/CheckHandler.js"></script>
+    <script type="text/javascript" src="src/js/Main.js"></script>
+    <script type="text/javascript" src="src/js/QualityHandler.js"></script>
+
+    <script type="text/javascript">
+        checkStatus = false;// 质检状态
+        operationCase = 4;
+
+        window.onload = function() {
+            data = data1;
+            init(platformStatus);
+        }
+
+        function upload(){
+            var str = JSON.stringify(data);
+            console.info(str);
+        }
+
+        // 控制操作频繁度
+        var saveSwitch = false ;
+        var end = setInterval(function () {
+            saveSwitch = true ;
+        }, 1000);
+
+        // ctrl + s 快捷键保存
+        $(window).keydown(function (e) {
+            if (e.keyCode == 83 && e.ctrlKey) {
+                if(saveSwitch){
+                    e.preventDefault();
+                    uploadClick();
+                }else{
+                    alert("当前操作太频繁，请稍等！");
+                }
+
+            }
+        });
+
+    </script>
+    <script src="src/js/ReferenceLine.js"></script>
+</head>
+<body>
+
+<!--<div id="loading" style="text-align: center;width:810px;height:400px; ">-->
+    <!--<span id="span" style="font-size: 30px;"></span>-->
+<!--</div>-->
+<div class="image_body" >
+    <div id="title"></div>
+
+    <div id="menu" style="margin-bottom: 10px;width:870px;">
+        <button type="button" id="hideAllShapesBtn" class="cupid-blue" style="width:90px;">隐藏框</button>
+        <button type="button" id="displayAllShapesBtn" class="cupid-blue" style="width:90px;">显示框</button>
+        <button type="button" id="displayAllAnnoTextBtn" class="cupid-blue" >隐藏文字</button>
+        <label><input id="incrementIpt" type="checkbox"/>自增 </label>
+        <button id="fullExtendBtn" type="button" class="cupid-blue" style="float: right;width: 60px">全屏</button>
+    </div>
+
+    <div class="status" id="tagBanner">
+        <div class="left1">
+              总框数：<span id="totalFrameNum"></span>
+        </div>
+        <div class="left2">
+              标注框数：<span id="tagedFrameNum"></span>
+        </div>
+        <div class="left2">
+        </div>
+              修改框数：<span id="tagedFrameNum1"></span>
+    </div>
+
+    <div class="status" id="checkBanner" style="display: none;">
+        <div class="left1">
+              总帧数：<span id="totalFrameNumC"></span>
+        </div>
+        <div class="left2" id="divtotalFrameNum1">
+              总框数：<span id="totalFrameNum1"></span>
+        </div>
+        <div class="left2" id="divtagedFrameNum11">
+              标注框数：<span id="tagedFrameNum11"></span>
+        </div>
+        <div class="left2" id="divtagedFrameNum111">
+              修改框数：<span id="tagedFrameNum111"></span>
+        </div>
+        <div class="left2">
+              质检率：<span id="checkRate"></span>
+        </div>
+    </div>
+
+    <!--3屏图片展示UI-->
+    <div id="imageshow" >
+        <div id="leftDiv" style="float:left;width:255px;height:450px;border: 1px solid gray;border-right:none;">
+            <div id="imageLeftDiv" onselectstart="return false;" style="-moz-user-select:none;width:255px;height:225px;">
+                <div class="anno_side">
+                    <span>左侧</span>
+                </div>
+                <img id="imageL"  style="position:absolute;width:250px;height:222px;"/>
+                <canvas id="canL" class="canvas" width="250px" height="222px"></canvas>
+            </div>
+
+            <!--<div id="imageRightDiv" onselectstart="return false;"  style="-moz-user-select:none;width:255px;height:225px;border-top:1px solid gray;">-->
+                <!--<div class="anno_side">-->
+                    <!--<span>右侧</span>-->
+                <!--</div>-->
+                <!--<img id="imageR"  style=" position:absolute;width:250px;height:222px;"/>-->
+                <!--<canvas id="canR" class="canvas" width="250px" height="222px"></canvas>-->
+            <!--</div>-->
+        </div>
+
+        <div id="editDiv" onselectstart="return false;"  style="-moz-user-select:none;float:left;width:503px;height:450px;border:1px solid gray">
+            <div class="anno_side">
+                <span>中间</span>
+            </div>
+            <img id="image" style="position:absolute;width:502px;height:448px;"/>
+            <canvas id="can" class="canvas" width="502px" height="448px"></canvas>
+        </div>
+
+        <div id="coverScrollDiv" class="scrollCover">
+            <div id="cover" class="cover"></div>
+        </div>
+
+    </div>
+
+    <!--图片播放操作工具栏-->
+    <div id="proccessBar">
+        <div id="play" class="play" onclick="action()"></div>
+        <!--<div>-->
+            <div id="scrollBar" onselectstart="return false;" >
+                <div id="scroll_load" onselectstart="return false;"></div>
+                <div id="scroll_Track" onselectstart="return false;"></div>
+                <div id="scroll_Thumb" ></div>
+            </div>
+        <!--</div>-->
+        <div id="slider"></div>
+        <div id="showproc"></div>
+
+        <div class="btn1" onselectstart="return false;" onclick="replay()">重播</div>
+        <div class="btn1" onselectstart="return false;" onclick="prev()">上一帧</div>
+        <div class="btn1" onselectstart="return false;" onclick="next()">下一帧</div>
+        <div class="btn1" onclick="prevTen()">上十帧</div>
+        <div class="btn1" onclick="nextTen()">下十帧</div>
+    </div>
+
+    <!--质检统计UI-->
+    <div id="checkStatictis" style="display:none;">
+        <div id="statusdiv">
+            <div class="left">
+                <div>质检总帧数：<span id="checkNum">12</span></div>
+                <div>质检总框数：<span id="boxNum">3</span></div>
+
+            </div>
+            <div class="right">
+                <div>漏标框数：<span id="leaktagNum">12</span></div>
+                <div>错标框数：<span id="errorNum">34</span></div>
+                <!--<div>漏标率：<span id="leakRate">22</span></div>-->
+                <!--<div>错标率：<span id="errorRate">44</span></div>-->
+            </div>
+        </div>
+        <div style="width:100%;">
+            <div id="cancelBtn" class="shutCheck"></div>
+            <table class="checkTable">
+                <tr>
+                    <td style="width:10%">漏标：</td>
+                    <td style="width:10%"><input type="number" id="leaktag" min="0" max="0" value="0" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"/></td>
+                    <td style="width:10%"> 说明：</td>
+                    <td style="width:60%" colspan="1"><textarea id="errorcontenttxt"></textarea></td>
+                    <td style="display: none;">错标：</td>
+                    <td style="width:10%"><input type="number" id="errortag" min="0" max="0" value="0" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"/></td>
+                </tr>
+            </table>
+            <br style="clear:both"/>
+        </div>
+        <div id="qualityboxdiv">
+            <table class="qualitytable">
+
+            </table>
+        </div>
+        <div id="checkbtndiv">
+            <div id="qualityBtn" >合格</div>
+            <div id="noqualityBtn">不合格</div>
+        </div>
+    </div>
+
+    <!--质检统计不合格按钮点击UI-->
+    <div id="checkInfodiv">
+        <!--<div id="cancelBtn1" class="shutCheck"></div>-->
+        <!--<table class="checkTable">-->
+            <!--<tr>-->
+                <!--<td>漏标：</td>-->
+                <!--<td><input type="number" id="leaktag1" min="0" max="0" value="0"/></td>-->
+                <!--<td style="display: none;">错标：</td>-->
+                <!--<td style="display: none;"><input type="number" id="errortag1" min="0" max="0" value="0"/></td>-->
+                <!--<td>审核意见：</td>-->
+                <!--<td colspan="1"><textarea id="errorcontenttxt1"></textarea></td>-->
+            <!--</tr>-->
+        <!--</table>-->
+
+        <!--<br style="clear:both"/>-->
+    </div>
+    <div id="checkInfoqut">
+        <span style="margin-top:3px;margin-left:auto;margin-right:auto;width:80px;height:40px;text-align: center;color:green; font-size:15px;font-weight: bold;">合格</span>
+    </div>
+    <div class="btndiv">
+        <div class="save"  id="btnsave" onclick="uploadClick()">保存</div>
+    </div>
+    <div id="video_anno">
+        <div class="title1">不合格帧：</div>
+        <div id="video_anno_body">
+            &nbsp;
+        </div>
+    </div>
+
+    <!-- 类型选择组件UI-->
+    <div class="typelist">
+        <div id="shut"></div>
+        <li id="psn_li"><span>行人</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="psd_li"><span>坐着的人</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="car_li"><span>汽车</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="carb_li"><span>厢型车子</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="pedal_li"><span>骑脚踏板的人</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="mtc_li"><span>骑摩托的人</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+        <li id="donc_li"><span>Don't care</span><img src="http://crowd-cdn.datatang.com/images/bNext.png" width="20px;" height="20px;" /></li>
+    </div>
+    <div class="typeselect" id="typeselectdiv_car">
+        <input id="tsIpt_car" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_car" />
+        <datalist id="autoNames_car"></datalist>
+        <input id="tsBtn_car" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_psn">
+        <input id="tsIpt_psn" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_psn" />
+        <datalist id="autoNames_psn"> <option value="1"></option><option value="2"></option><option value="3"></option></datalist>
+        <input id="tsBtn_psn" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_pedal">
+        <input id="tsIpt_pedal" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_pedal" />
+        <datalist id="autoNames_pedal"></datalist>
+        <input id="tsBtn_pedal" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_mtc">
+        <input id="tsIpt_mtc" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_mtc" />
+        <datalist id="autoNames_mtc"></datalist>
+        <input id="tsBtn_mtc" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_psd">
+        <input id="tsIpt_psd" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_psd" />
+        <datalist id="autoNames_psd"></datalist>
+        <input id="tsBtn_psd" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_carb">
+        <input id="tsIpt_carb" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_carb" />
+        <datalist id="autoNames_carb"></datalist>
+        <input id="tsBtn_carb" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <div class="typeselect" id="typeselectdiv_donc">
+        <input id="tsIpt_donc" type="text" class="typeselectIpt" autocomplete="on" name="demoAutoComplete" list="autoNames_donc" />
+        <datalist id="autoNames_donc"></datalist>
+        <input id="tsBtn_donc" type="button" class="typeselectBtn" value="确定">
+    </div>
+    <!-- 删除按钮UI -->
+    <div id="deletebtndiv">
+        <input type="button" style="cursor: pointer" onclick="deleteBtnClick()" value="  删除  "/>
+        <input type="button" style="cursor: pointer" onclick="onModifyBtnClick()" value="  编辑  "/>
+    </div>
+
+</div>
+</body>
+</html>

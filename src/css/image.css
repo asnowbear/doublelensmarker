@@ -1,0 +1,677 @@
+.image_body{
+    width:870px;
+    font-size:14px;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+#title{
+    font-weight:bold;
+    height:36px;
+    line-height:36px;
+    font-size:20px;
+    text-align:center;
+}
+#titleid{
+    font-weight:bold;
+    height:36px;
+    line-height:36px;
+    font-size:20px;
+    margin-left: 20px;
+    float: left;
+    text-align:left;
+}
+.status{
+    height:30px;
+    font-size:14px;
+    line-height:30px;
+}
+.status div{
+    float:left;
+}
+.status .left1{
+    width:150px;
+}
+.status .left2{
+    width:150px;
+}
+.status .left3{
+    margin-left:50px;
+    width:100px;
+}
+.status .left4{
+    width:160px;
+}
+
+#imageshow{
+    background-size:cover;
+    /*background-color:black;*/
+    background-repeat:no-repeat;
+    height:455px;
+    width:870px;
+}
+
+#qualityboxdiv{
+    width:99%;
+    height:210px;
+    margin:10px auto;
+    border:1px dotted #9caaba;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 12px;
+}
+.qualitytable,.qualitytable tr{
+    width:100%;
+}
+.qualitytable td{
+    width:50%;
+    height: 22px;
+}
+.ctitle1{
+    font-weight: normal;
+    line-height: 22px;
+}
+.qualitytable span{
+    width: 120px;
+    text-align: right;
+    margin-left: 5px;
+    float:left;
+}
+.qualitytable label{
+    margin-left: 10px;
+    font-weight: normal;
+}
+.canvas{
+    position:absolute;
+    /*width:502px;*/
+    /*height:448px;*/
+}
+
+.typelist {
+    clear:both;
+    position: absolute;
+    width:145px;
+    height:200px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    padding-top: 10px;
+    display: none;
+    /*border:#83b3d9 1px solid;*/
+}
+
+.typelist li{
+    list-style-type:none;
+    display:block;
+    width:145px;
+    height:26px;
+    float:left;
+    line-height:26px;
+    cursor: default;
+}
+/*.typelist li:hover{*/
+/*background: #1e90ff;*/
+/*}*/
+
+.typelist li span{
+    float: left;
+    width:95px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.typelist li img{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.typeselect{
+    position: absolute;
+    width:125px;
+    height: 31px;
+    text-align: center;
+    display: none;
+    background: #f5f5f5;
+    border-radius: 3px;
+    padding-top: 3px;
+    z-index: 1;
+}
+
+.typeselectIpt{
+    width:65px;
+    height: 25px;
+}
+.typeselectBtn{
+    width:45px;
+    height: 25px;
+}
+
+.middleimage{
+    width:450px;
+    height:355px;
+    position: absolute;
+    float:left;
+}
+
+.scrollCover{
+    width:100px;
+    height:447px;
+    border: 1px solid #d1c7b7;
+    margin-left: 701px;
+    overflow-y: auto;
+}
+.cover{
+    /*width:110px;*/
+    font-family: Arial;
+    font-size:12px;
+}
+.pcover{
+    margin-left: 3px;
+    margin-top: 2px;
+    /*height: 70px;*/
+    background: #eeeeee;
+}
+.hcover{
+    margin:2px 2px;
+    height: 50px;
+    background: #eeeeee;
+}
+.mpcover{
+    margin:3px 2px;
+    height: 70px;
+    background: #eeeeee;
+}
+.coverinput{
+    vertical-align:middle;
+}
+.ctitle{
+    font-weight: bold;
+    line-height: 25px;
+}
+
+#proccessBar{
+    width:870px;
+    background-color:gray;
+    height:70px;
+    line-height:70px;
+}
+#proccessBar .btn1{
+    margin-top:22px;
+    margin-left:8px;
+    display:block;
+    float:left;
+    font-size:14px;
+    height:26px;
+    line-height:26px;
+    text-align:center;
+    cursor:pointer;
+    width:50px;
+    background:url(http://crowd-cdn.datatang.com/images/u24.png) 0 0 no-repeat;
+}
+#poseDiv{
+    display:none;
+    border-radius: 8px;
+    position:absolute;
+    background: #fff;
+    /*display:none;*/
+    left:0px;
+    top:0px;
+    width:120px;
+    height:160px;
+}
+
+.psbtn{
+    width:94px;
+    height:25px;
+    border-radius:3px;
+    text-align: center;
+    text-decoration: none;
+    background: #fff;
+    font-size:12px;
+}
+.posetitle{
+    font-family: Arial;
+    line-height: 28px;
+    margin: 2px 3px;
+}
+.posebtn{
+    border-radius: 6px;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    margin: 2px 3px;
+    cursor:pointer;
+    font-family: Arial;
+    border: 1px solid #d1c7b7;
+}
+.image_body .play{
+    cursor:pointer;
+    margin-top:17px;
+    float:left;
+    margin-left:10px;
+    width:40px;
+    height:40px;
+    background:url(http://crowd-cdn.datatang.com/images/play.png);
+}
+#slider{
+    margin-top:20px;float:left;margin-left:20px;
+}
+#showproc{
+    margin-left:4px;
+    float:left;
+    color:white;
+    font-size:14px;
+    height:70px;
+    line-height:70px;
+    width:50px;
+    text-align:left;
+}
+#personbtndiv{
+    position:absolute;
+    display:none;
+    left:0px;
+    top:0px;
+    width:160px;
+    height:30px;
+}
+#deletebtndiv{
+    position:absolute;
+    display:none;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:30px;
+}
+#headbtndiv{
+    position:absolute;
+    display:none;
+    left:0px;
+    top:0px;
+    width:160px;
+    height:30px;
+}
+#statusdiv{
+    font-size:14px;
+    height:50px;
+    line-height:50px;
+}
+#statusdiv .left{
+    float:left;
+    width:45%;
+    height:50px;
+    text-align:right;
+}
+#statusdiv .right{
+    float:right;
+    width:45%;
+    height:50px;
+    text-align:left;
+}
+#statusdiv .right div{
+    float:left;
+    width:150px;
+}
+#statusdiv .left div{
+    float:right;
+    width:150px;
+    text-align:right;
+}
+#checkbtndiv{
+    text-align:center;
+}
+#qualityBtn{
+    display:inline-block;
+    width:80px;height:30px;
+    line-height:30px;
+    cursor:pointer;
+    color:black;
+    background:url(http://crowd-cdn.datatang.com/images/u59.png);
+}
+#noqualityBtn{
+    display:inline-block;
+    margin-left:50px;
+    cursor:pointer;
+    width:80px;height:30px;
+    line-height:30px;
+    color:black;
+    background:url(http://crowd-cdn.datatang.com/images/u59.png);
+}
+
+.cc1{
+    display:inline-block;
+    line-height:30px;
+    text-align: center;
+    cursor:pointer;
+    background:url(http://crowd-cdn.datatang.com/images/u154.png)0 0 no-repeat;
+    color:white;
+    width:110px;
+    height:32px;
+}
+.cc2{
+    display:inline-block;
+    cursor:pointer;
+    width:80px;
+    height:28px;
+    line-height:30px;
+    margin-left:50px;
+    color:white;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    background:url(http://crowd-cdn.datatang.com/images/u154.png) 0 0 no-repeat;
+}
+.checkTable{
+    margin:auto;
+}
+
+
+#checkInfodiv{
+    display:none;
+    margin-top:20px;
+    height:80px;
+    width: 870px;
+    font-size:14px;
+    margin-bottom:20px;
+    background: rgba(5, 2, 4, 0.05);
+    border-radius: 3px;
+    /*border: 1px solid #1a3e66;*/
+}
+
+#checkInfoqut{
+    display:none;
+    margin-top:20px;
+    height:40px;
+    width:870px;
+    font-size:14px;
+    margin-bottom:20px;
+    background: rgba(5, 2, 4, 0.05);
+    border-radius: 3px;
+    text-align: center;
+    font-family: Arial;
+    line-height: 40px;
+    /*border: 1px solid #1a3e66;*/
+}
+
+
+
+#errorcontenttxt{
+    width:500px;
+    height:25px;
+}
+#checkInfodiv .resultdiv{
+    color:red;
+    text-align:center;
+}
+.contentdiv{
+    width:300px;
+    margin:0px auto;
+    height:30px;
+    text-align:left;
+}
+#checkInfodiv .leaktagdiv{
+    float:left;
+    height:30px;
+    line-height:30px;
+    width:45%;
+    text-align:right;
+}
+#checkInfodiv .errortagdiv{
+    float:right;
+    height:30px;
+    line-height:30px;
+    width:45%;
+    text-align:left;
+}
+#checkInfodiv .leftdiv{
+    float:left;
+    height:30px;
+    line-height:30px;
+    width:45%;
+    text-align:right;
+}
+#checkInfodiv .rightdiv{
+    float:right;
+    height:30px;
+    line-height:30px;
+    width:55%;
+    text-align:left;
+}
+#checkInfodiv .leftdiv1{
+    float:left;
+    height:30px;
+    line-height:30px;
+    width:39%;
+    text-align:right;
+}
+#checkInfodiv .rightdiv1{
+    float:right;
+    height:30px;
+    line-height:30px;
+    width:61%;
+    text-align:left;
+}
+.btndiv{
+    margin-top:20px;
+    text-align: center;
+}
+.save{
+    line-height:32px;
+    color:white;
+    width:110px;
+    height:32px;
+    cursor:pointer;
+    /*margin-left: 30px;*/
+    margin-left: auto;
+    margin-right: auto;
+    background:url(http://crowd-cdn.datatang.com/images/u154.png) 0 0 no-repeat;
+}
+.cancel{
+    line-height:32px;
+    color:white;
+    width:110px;
+    height:32px;
+    cursor:pointer;
+    background:url(http://crowd-cdn.datatang.com/images/u154.png) 0 0 no-repeat;
+}
+#video_anno {
+    height: 102px;
+    text-align: center;
+    overflow-y:auto;
+    margin-top: 10px;
+    background-color:#eeeeee;
+    width:870px;
+
+}
+#video_anno .title1{
+    text-align: left;font-size:12px;height:30px;line-height: 30px;
+}
+#video_anno_body {
+    width: 90%;
+    margin: 0px auto;
+}
+.anno {
+    float: left;
+    border-radius: 6px;
+    background-color: #00ff00;
+    width: 41px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    margin: 5px;
+    cursor:pointer;
+    font-family: Arial;
+}
+.no_qualified {
+    color:white;
+    background-color: #ff6666;
+}
+.modify {
+    color:white;
+    background-color: #ffcc00;
+}
+#scrollBar {
+    width: 380px;
+    float:left;
+    height: 10px;
+    background-color: #ccc;
+    margin: 0 auto;
+    margin-top: 32px;
+    margin-left:10px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    cursor: pointer;
+}
+#scroll_Track {
+    width: 0px;
+    height: 10px;
+    background-color: #ff4400;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    position: absolute;
+}
+#scroll_load {
+    width: 0px;
+    height: 10px;
+    position: absolute;
+    background-color: #d0c099;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+#scroll_Thumb {
+    height: 25px;
+    width: 25px;
+    background-color: #efefef;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    -moz-box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    position: absolute;
+    margin-top: -9px;
+    cursor: pointer;
+    background-color: #ff4400;
+    border: 1px solid #fff;
+}
+/*#scroll_Thumb:hover {*/
+/*background-color: #ff4400;*/
+/*border: 1px solid #fff;*/
+/*}*/
+#progressBar {
+    width: 80%;
+    height: 10px;
+    background-color: #ccc;
+    margin: 0 auto;
+    margin-top: 50px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+#progressBar_Track {
+    width: 200px;
+    height: 10px;
+    background-color: #ff4400;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+#beian {
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 50px
+}
+#beian a {
+    color: gray;
+    font: 13px "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+.anno_side{
+    z-index:5;
+    position:absolute;
+    border-radius: 5px;
+    opacity: 0.8;
+    background: #555555;
+    width:60px;
+    height:25px;
+}
+
+.anno_side span{
+    color: #FFFFFF;
+    float: left;
+    margin-top: 2px;
+    margin-left: 17px;
+    font-weight: bold;
+    font: 14px "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+button.cupid-blue {
+    background-color: #d7e5f5;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7e5f5), color-stop(100%, #cbe0f5));
+    background-image: -webkit-linear-gradient(top, #d7e5f5, #cbe0f5);
+    background-image: -moz-linear-gradient(top, #d7e5f5, #cbe0f5);
+    background-image: -ms-linear-gradient(top, #d7e5f5, #cbe0f5);
+    background-image: -o-linear-gradient(top, #d7e5f5, #cbe0f5);
+    background-image: linear-gradient(top, #d7e5f5, #cbe0f5);
+    border-top: 1px solid #abbbcc;
+    border-left: 1px solid #a7b6c7;
+    border-bottom: 1px solid #a1afbf;
+    border-right: 1px solid #a7b6c7;
+    border-radius: 12px;
+    -webkit-box-shadow: inset 0 1px 0 0 white;
+    box-shadow: inset 0 1px 0 0 white;
+    color: #1a3e66;
+    font: normal 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    padding: 6px 0 7px 0;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    width: 100px; }
+button.cupid-blue:hover {
+    background-color: #ccd9e8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ccd9e8), color-stop(100%, #c1d4e8));
+    background-image: -webkit-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -moz-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -ms-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -o-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: linear-gradient(top, #ccd9e8, #c1d4e8);
+    border-top: 1px solid #a1afbf;
+    border-left: 1px solid #9caaba;
+    border-bottom: 1px solid #96a3b3;
+    border-right: 1px solid #9caaba;
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2;
+    box-shadow: inset 0 1px 0 0 #f2f2f2;
+    color: #163659;
+    cursor: pointer; }
+button.cupid-blue:active {
+    border: 1px solid #8c98a7;
+    -webkit-box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+    box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+}
+
+#shut{
+    width:45px;
+    height:18px;
+    float:right;
+    margin-right:4px;
+    margin-top:-8px;
+    background:url(http://crowd-cdn.datatang.com/images/sh.png) no-repeat 0px 0px;
+}
+#shut:hover{
+    background:url(http://crowd-cdn.datatang.com/images/sh.png) no-repeat 0px -25px;
+}
+
+.shutCheck{
+    width:40px;
+    height:18px;
+    float:right;
+    margin-right:4px;
+    margin-top:0px;
+    background:url(http://crowd-cdn.datatang.com/images/sh.png) no-repeat 0px 0px;
+}
+.shutCheck:hover{
+    background:url(http://crowd-cdn.datatang.com/images/sh.png) no-repeat 0px -25px;
+}
