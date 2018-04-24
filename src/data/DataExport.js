@@ -53,11 +53,11 @@ function collectionAllData(){
     if(operationCase == 32){
         collectionDataForQuality(data.images,images1,centerShapes,"center");
         collectionDataForQuality(data.imagesL,images2,leftShapes,"left");
-        collectionDataForQuality(data.imagesR,images3,rightShapes,"right")
+        // collectionDataForQuality(data.imagesR,images3,rightShapes,"right")
     }else{
         collectionData(data.images,centerShapes,"center");
         collectionData(data.imagesL,leftShapes,"left");
-        collectionData(data.imagesR,rightShapes,"right")
+        // collectionData(data.imagesR,rightShapes,"right")
     }
 
     DEBUG && console.info("结束转换，完成本次标注！");
@@ -497,7 +497,7 @@ function insertTraceInfoToAllData(){
 
     insertTraceInfoToData(centerShapes,data.images);
     insertTraceInfoToData(leftShapes,data.imagesL);
-    insertTraceInfoToData(rightShapes,data.imagesR);
+    // insertTraceInfoToData(rightShapes,data.imagesR);
 }
 
 /**

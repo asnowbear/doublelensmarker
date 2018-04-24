@@ -169,12 +169,12 @@ function show() {
 
         $("#image").attr("src",imgar[pos - 1].src);
         $("#imageL").attr("src",imgLeft[pos-1].src);
-        $("#imageR").attr("src",imgRight[pos - 1].src);
+        // $("#imageR").attr("src",imgRight[pos - 1].src);
     } else {
         if (data.images.length > 0) {
             $("#image").attr("src",imgar[0].src);
             $("#imageL").attr("src",imgLeft[0].src);
-            $("#imageR").attr("src",imgRight[0].src);
+            // $("#imageR").attr("src",imgRight[0].src);
         }
 
         isEnabledEdit = false;
@@ -229,14 +229,16 @@ function resetShapes(){
 function redrawSide(){
     if(currentEditedType === "center"){
         redrawScale("canL",leftShapesCache);
-        redrawScale("canR",rightShapesCache);
+        // redrawScale("canR",rightShapesCache);
     }else if(currentEditedType === "left"){
         redrawScale("can",centerShapesCache);
-        redrawScale("canR",rightShapesCache);
-    }else if(currentEditedType === "right"){
-        redrawScale("can",centerShapesCache);
-        redrawScale("canL",leftShapesCache);
+        // redrawScale("canR",rightShapesCache);
     }
+
+    // else if(currentEditedType === "right"){
+    //     redrawScale("can",centerShapesCache);
+    //     redrawScale("canL",leftShapesCache);
+    // }
 }
 
 /**
@@ -277,9 +279,9 @@ function alwaysRedrawShapes(){
         case "left":
             edtShapes = leftShapes ;
             break ;
-        case "right":
-            edtShapes = rightShapes;
-            break ;
+        // case "right":
+        //     edtShapes = rightShapes;
+        //     break ;
     }
 
     // 3.绘制

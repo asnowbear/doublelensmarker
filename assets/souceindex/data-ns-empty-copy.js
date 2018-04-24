@@ -26,126 +26,126 @@ var data1 = {
     "overallqualified": true,
     "images": [
     {
-        "fileName": "imageCenter/image01450.jpg"
+        "fileName": "assets/azimages/imageCenter/image01450.jpg"
     },
     {
-        "fileName": "imageCenter/image01451.jpg"
+        "fileName": "assets/azimages/imageCenter/image01451.jpg"
     },
     {
-        "fileName": "imageCenter/image01452.jpg"
+        "fileName": "assets/azimages/imageCenter/image01452.jpg"
     },
     {
-        "fileName": "imageCenter/image01453.jpg"
+        "fileName": "assets/azimages/imageCenter/image01453.jpg"
     },
     {
-        "fileName": "imageCenter/image01454.jpg"
+        "fileName": "assets/azimages/imageCenter/image01454.jpg"
     },
     {
-        "fileName": "imageCenter/image01455.jpg"
+        "fileName": "assets/azimages/imageCenter/image01455.jpg"
     },
     {
-        "fileName": "imageCenter/image01456.jpg"
+        "fileName": "assets/azimages/imageCenter/image01456.jpg"
     },
     {
-        "fileName": "imageCenter/image01457.jpg"
+        "fileName": "assets/azimages/imageCenter/image01457.jpg"
     },
     {
-        "fileName": "imageCenter/image01458.jpg"
+        "fileName": "assets/azimages/imageCenter/image01458.jpg"
     },
     {
-        "fileName": "imageCenter/image01459.jpg"
+        "fileName": "assets/azimages/imageCenter/image01459.jpg"
     },
     {
-        "fileName": "imageCenter/image01460.jpg"
+        "fileName": "assets/azimages/imageCenter/image01460.jpg"
     },
     {
-        "fileName": "imageCenter/image01461.jpg"
+        "fileName": "assets/azimages/imageCenter/image01461.jpg"
     },
     {
-        "fileName": "imageCenter/image01462.jpg"
+        "fileName": "assets/azimages/imageCenter/image01462.jpg"
     },
     {
-        "fileName": "imageCenter/image01463.jpg"
+        "fileName": "assets/azimages/imageCenter/image01463.jpg"
     },
     {
-        "fileName": "imageCenter/image01464.jpg"
+        "fileName": "assets/azimages/imageCenter/image01464.jpg"
     },
     {
-        "fileName": "imageCenter/image01465.jpg"
+        "fileName": "assets/azimages/imageCenter/image01465.jpg"
     },
     {
-        "fileName": "imageCenter/image01466.jpg"
+        "fileName": "assets/azimages/imageCenter/image01466.jpg"
     },
     {
-        "fileName": "imageCenter/image01467.jpg"
+        "fileName": "assets/azimages/imageCenter/image01467.jpg"
     },
     {
-        "fileName": "imageCenter/image01468.jpg"
+        "fileName": "assets/azimages/imageCenter/image01468.jpg"
     },
     {
-        "fileName": "imageCenter/image01469.jpg"
+        "fileName": "assets/azimages/imageCenter/image01469.jpg"
     }
 ],
     "imagesL": [
     {
-        "fileName": "imageLeft/image01450.jpg"
+        "fileName": "assets/azimages/imageLeft/image01450.jpg"
     },
     {
-        "fileName": "imageLeft/image01451.jpg"
+        "fileName": "assets/azimages/imageLeft/image01451.jpg"
     },
     {
-        "fileName": "imageLeft/image01452.jpg"
+        "fileName": "assets/azimages/imageLeft/image01452.jpg"
     },
     {
-        "fileName": "imageLeft/image01453.jpg"
+        "fileName": "assets/azimages/imageLeft/image01453.jpg"
     },
     {
-        "fileName": "imageLeft/image01454.jpg"
+        "fileName": "assets/azimages/imageLeft/image01454.jpg"
     },
     {
-        "fileName": "imageLeft/image01455.jpg"
+        "fileName": "assets/azimages/imageLeft/image01455.jpg"
     },
     {
-        "fileName": "imageLeft/image01456.jpg"
+        "fileName": "assets/azimages/imageLeft/image01456.jpg"
     },
     {
-        "fileName": "imageLeft/image01457.jpg"
+        "fileName": "assets/azimages/imageLeft/image01457.jpg"
     },
     {
-        "fileName": "imageLeft/image01458.jpg"
+        "fileName": "assets/azimages/imageLeft/image01458.jpg"
     },
     {
-        "fileName": "imageLeft/image01459.jpg"
+        "fileName": "assets/azimages/imageLeft/image01459.jpg"
     },
     {
-        "fileName": "imageLeft/image01460.jpg"
+        "fileName": "assets/azimages/imageLeft/image01460.jpg"
     },
     {
-        "fileName": "imageLeft/image01461.jpg"
+        "fileName": "assets/azimages/imageLeft/image01461.jpg"
     },
     {
-        "fileName": "imageLeft/image01462.jpg"
+        "fileName": "assets/azimages/imageLeft/image01462.jpg"
     },
     {
-        "fileName": "imageLeft/image01463.jpg"
+        "fileName": "assets/azimages/imageLeft/image01463.jpg"
     },
     {
-        "fileName": "imageLeft/image01464.jpg"
+        "fileName": "assets/azimages/imageLeft/image01464.jpg"
     },
     {
-        "fileName": "imageLeft/image01465.jpg"
+        "fileName": "assets/azimages/imageLeft/image01465.jpg"
     },
     {
-        "fileName": "imageLeft/image01466.jpg"
+        "fileName": "assets/azimages/imageLeft/image01466.jpg"
     },
     {
-        "fileName": "imageLeft/image01467.jpg"
+        "fileName": "assets/azimages/imageLeft/image01467.jpg"
     },
     {
-        "fileName": "imageLeft/image01468.jpg"
+        "fileName": "assets/azimages/imageLeft/image01468.jpg"
     },
     {
-        "fileName": "imageLeft/image01469.jpg"
+        "fileName": "assets/azimages/imageLeft/image01469.jpg"
     }
 ]
 }

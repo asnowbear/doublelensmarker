@@ -93,10 +93,10 @@ function adjustShapesForSwitch(){
             sideShapes = cloneShapes(leftShapes);
             leftShapesCache = sideShapes;
             break ;
-        case "right":
-            sideShapes = cloneShapes(rightShapes);
-            rightShapesCache = sideShapes;
-            break ;
+        // case "right":
+        //     sideShapes = cloneShapes(rightShapes);
+        //     rightShapesCache = sideShapes;
+        //     break ;
     }
 
     DEBUG && console.info("镜头切换，将中间镜头数据->缓存数据");

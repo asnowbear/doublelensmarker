@@ -1,0 +1,1 @@
+var formInfo = {    'name' : 'character',    'alias' : '人物',    'children' : [        {            'name' : 'pedestrain',        }    ]}

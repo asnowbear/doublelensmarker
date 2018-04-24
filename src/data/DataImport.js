@@ -9,7 +9,6 @@ function initTraceAndCoverInfoFromData(){
 
     initTraceAndCoverInfoFromDataInner(data.images,centerShapes,"center");
     initTraceAndCoverInfoFromDataInner(data.imagesL,leftShapes,"left");
-    initTraceAndCoverInfoFromDataInner(data.imagesR,rightShapes,"right");
 
     DEBUG && console.info("结束转换数据");
 
@@ -21,10 +20,10 @@ function initSideShapesCache(){
     DEBUG && console.info("开始转换缓存数据，中间镜头->边镜头(左右)");
 
     leftShapesCache = cloneShapes(leftShapes);
-    rightShapesCache = cloneShapes(rightShapes);
+    // rightShapesCache = cloneShapes(rightShapes);
 
     adjustSideShapes(leftShapesCache);
-    adjustSideShapes(rightShapesCache);
+    // adjustSideShapes(rightShapesCache);
 
     DEBUG && console.info("结束转换数据，边镜头绘制缓存数据");
 }
@@ -34,10 +33,14 @@ function initSideShapesCache(){
  */
 function initTraceAndCoverInfoFromDataInner(images,shapes,ctype){
     for(var i= 0;i < images.length;i++){
+        // if(images[i].label === undefined) {
+        //     images[i].label = {}
+        // }
+
+        (!images[i].label) && (images[i].label = {})
+
         var label = images[i].label;
         var indexPos = i + 1 ;
-
-        label["person"] && delete label["person"] ;
 
         (!label.PED) && (label.PED = []);
         (!label.Car) && (label.Car = []);

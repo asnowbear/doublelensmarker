@@ -154,14 +154,14 @@ function initSelectedNumList(type){
         }
     }
 
-    i = rightShapes.length - 1;
-    s = null ;
-    for(;i >= 0 ;i --){
-        s = rightShapes[i];
-        if(s.type == type){
-            nums.push(s.num);
-        }
-    }
+    // i = rightShapes.length - 1;
+    // s = null ;
+    // for(;i >= 0 ;i --){
+    //     s = rightShapes[i];
+    //     if(s.type == type){
+    //         nums.push(s.num);
+    //     }
+    // }
 
     i = centerShapes.length - 1;
     s = null ;
@@ -208,9 +208,9 @@ function exsitInShapes(val,type,shapes){
     for(var k=0;k<leftShapes.length;k++){
         shapesmaps[k]=leftShapes[k];
     }
-    for(var k=0;k<rightShapes.length;k++){
-        shapesmaps[leftShapes.length+k]=rightShapes[k];
-    }
+    // for(var k=0;k<rightShapes.length;k++){
+    //     shapesmaps[leftShapes.length+k]=rightShapes[k];
+    // }
     for(var k=0;k<centerShapes.length;k++){
         shapesmaps[leftShapes.length+rightShapes.length+k]=centerShapes[k];
     }
@@ -248,25 +248,25 @@ function exsitInShapes(val,type,shapes){
     if(oncount>1){
         return true;
     }
-    i = rightShapes.length - 1;
-    s = null ;
-    oncount=0;
-    for(;i >= 0 ;i --){
-        s = rightShapes[i];
-        //if(s.type == type){
-            if(s.num == val||s.num==-1){
-                    cfcount++;
-                    oncount++;
-                    //return true ;
-                    // if(s.type!=type){
-                        //typecheckcount=true;
-                        if(map[val]!=null){
-                            return true;
-                        }
-                    // }
-            }
-        //}
-    }
+    // i = rightShapes.length - 1;
+    // s = null ;
+    // oncount=0;
+    // for(;i >= 0 ;i --){
+    //     s = rightShapes[i];
+    //     //if(s.type == type){
+    //         if(s.num == val||s.num==-1){
+    //                 cfcount++;
+    //                 oncount++;
+    //                 //return true ;
+    //                 // if(s.type!=type){
+    //                     //typecheckcount=true;
+    //                     if(map[val]!=null){
+    //                         return true;
+    //                     }
+    //                 // }
+    //         }
+    //     //}
+    // }
     if(oncount>1){
         return true;
     }
@@ -312,16 +312,16 @@ function generateAutomaticNum(type){
         }
     }
 
-    i = rightShapes.length - 1;
-    s = null ;
-    for(;i >= 0 ;i --){
-        s = rightShapes[i];
-        if(s.type == type){
-            if(Number(s.num) > nextMaxVal){
-                nextMaxVal = Number(s.num) ;
-            }
-        }
-    }
+    // i = rightShapes.length - 1;
+    // s = null ;
+    // for(;i >= 0 ;i --){
+    //     s = rightShapes[i];
+    //     if(s.type == type){
+    //         if(Number(s.num) > nextMaxVal){
+    //             nextMaxVal = Number(s.num) ;
+    //         }
+    //     }
+    // }
 
     i = centerShapes.length - 1;
     s = null ;
@@ -355,17 +355,17 @@ function generateAutomaticNumnew(type){
         }*/
     }
 
-    i = rightShapes.length - 1;
-    s = null ;
-    for(;i >= 0 ;i --){
-        s = rightShapes[i];
-        shapesNum.push(s);
-        /*if(s.type == type){
-            if(Number(s.num) > nextMaxVal){
-                nextMaxVal = Number(s.num) ;
-            }
-        }*/
-    }
+    // i = rightShapes.length - 1;
+    // s = null ;
+    // for(;i >= 0 ;i --){
+    //     s = rightShapes[i];
+    //     shapesNum.push(s);
+    //     /*if(s.type == type){
+    //         if(Number(s.num) > nextMaxVal){
+    //             nextMaxVal = Number(s.num) ;
+    //         }
+    //     }*/
+    // }
 
     i = centerShapes.length - 1;
     s = null ;
@@ -513,26 +513,26 @@ function addShapeModifystatus(shape,model){
             }
         }
 
-        i = rightShapes.length - 1;
-        s = null;
-        for (; i >= 0; i--) {
-            s = rightShapes[i];
-            if (shape == s) {
-                if (s.traces.length > 0) {
-                    //如果有内容则直接加上修改标识，标识是未修改的0,1是修改，在最后点击确认时会更新修改的状态
-                    for (var c = 0; c < s.traces.length; c++) {
-                        var trace = s.traces[c];
-                        if (pos == trace.pos) {
-                            if(rightShapes[i].traces[c].mdfs!=null&&rightShapes[i].traces[c].mdfs==1){
-                                rightShapes[i].traces[c].mdfs =1;
-                            }else {
-                                rightShapes[i].traces[c].mdfs = modifystatue;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // i = rightShapes.length - 1;
+        // s = null;
+        // for (; i >= 0; i--) {
+        //     s = rightShapes[i];
+        //     if (shape == s) {
+        //         if (s.traces.length > 0) {
+        //             //如果有内容则直接加上修改标识，标识是未修改的0,1是修改，在最后点击确认时会更新修改的状态
+        //             for (var c = 0; c < s.traces.length; c++) {
+        //                 var trace = s.traces[c];
+        //                 if (pos == trace.pos) {
+        //                     if(rightShapes[i].traces[c].mdfs!=null&&rightShapes[i].traces[c].mdfs==1){
+        //                         rightShapes[i].traces[c].mdfs =1;
+        //                     }else {
+        //                         rightShapes[i].traces[c].mdfs = modifystatue;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         i = centerShapes.length - 1;
         s = null;
@@ -576,24 +576,24 @@ function addShapeModifystatus(shape,model){
             }
         }
 
-        i = rightShapes.length - 1;
-        s = null;
-        for (; i >= 0; i--) {
-            s = rightShapes[i];
-            if (shape == s) {
-                if (s.traces.length > 0) {
-                    //如果有内容则直接加上修改标识，标识是未修改的0,1是修改，在最后点击确认时会更新修改的状态
-                    for (var c = 0; c < s.traces.length; c++) {
-                        var trace = s.traces[c];
-                        if (pos == trace.pos) {
-                            if(trace.mdfs!=null) {
-                                rightShapes[i].traces[c].mdfs = modifystatue;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // i = rightShapes.length - 1;
+        // s = null;
+        // for (; i >= 0; i--) {
+        //     s = rightShapes[i];
+        //     if (shape == s) {
+        //         if (s.traces.length > 0) {
+        //             //如果有内容则直接加上修改标识，标识是未修改的0,1是修改，在最后点击确认时会更新修改的状态
+        //             for (var c = 0; c < s.traces.length; c++) {
+        //                 var trace = s.traces[c];
+        //                 if (pos == trace.pos) {
+        //                     if(trace.mdfs!=null) {
+        //                         rightShapes[i].traces[c].mdfs = modifystatue;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         i = centerShapes.length - 1;
         s = null;
